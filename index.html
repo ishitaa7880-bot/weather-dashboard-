@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skylog – Live Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <h1>Skylog</h1>
+      <p class="tagline">Check the current weather and 7-day forecast for any city.</p>
+      <button id="themeBtn" class="btn ghost" type="button">Dark mode</button>
+    </header>
+
+    <main class="main">
+      <section class="panel search-panel">
+        <form id="weatherForm" autocomplete="off">
+          <input
+            id="cityInput"
+            type="text"
+            placeholder="Enter a city, e.g. Pune, Mumbai, London"
+            aria-label="City name"
+          >
+          <button class="btn primary" type="submit">Search</button>
+        </form>
+        <p id="message" class="note" role="status"></p>
+      </section>
+
+      <section id="currentWeather" class="panel current" hidden>
+        <div class="current-main">
+          <div>
+            <h2 id="cityName">--</h2>
+            <p id="localTime" class="note"></p>
+          </div>
+
+          <div class="current-temp">
+            <span id="weatherIcon" class="big-icon">☀️</span>
+            <span id="temperature" class="big">--°C</span>
+          </div>
+        </div>
+
+        <p id="condition" class="condition"></p>
+
+        <div class="weather-details">
+          <div class="detail">
+            <span>Feels like</span>
+            <strong id="feelsLike">--</strong>
+          </div>
+          <div class="detail">
+            <span>Humidity</span>
+            <strong id="humidity">--</strong>
+          </div>
+          <div class="detail">
+            <span>Wind</span>
+            <strong id="wind">--</strong>
+          </div>
+          <div class="detail">
+            <span>Max / Min</span>
+            <strong id="maxMin">--</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="forecastSection" class="panel" hidden>
+        <h2>7-day forecast</h2>
+        <div id="forecast" class="forecast"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
